@@ -3,12 +3,12 @@ section header {
     padding-block: 12px 24px;
     font: var(--text-span);
 
-    a {
+    & a {
         justify-self: end;
         align-items: center;
         gap: 4px;
         
-        span {
+        & span {
             background-image: url(../assets/icons/ArrowRight.svg);
             width: 16px;
             height: 16px;
@@ -23,13 +23,13 @@ section header {
 #featured {
     grid-area: featured;
     
-    img {
+    & img {
         height: 100%;
         object-fit: cover;
         border-radius: 4px;
     }
 
-    .card {
+    & .card {
         position: relative;
         border-radius: 4px;
         overflow: hidden;
@@ -47,7 +47,7 @@ section header {
             );
         }
 
-        figcaption {
+        & figcaption {
             position: absolute;
             bottom: 0;
             padding: 24px;
@@ -56,7 +56,7 @@ section header {
                 padding: 12px;
             }
             
-            h2 {
+            & h2 {
                 margin-top: 8px;
             }
         }
@@ -70,20 +70,20 @@ section header {
         grid-template-columns: repeat(4, 292px);
     }
 
-    img {
+    & img {
         height: 160px;
     }
 
-    figure {
+    & figure {
         position: relative;
 
-        .content-tag {
+        & .content-tag {
             position: absolute;
             top: 8px;
             left: 8px;
         }
 
-        p {
+        & p {
             margin-top: 8px;
             font-weight: 800;
         }
@@ -92,13 +92,13 @@ section header {
 
 #ai {
     grid-area: ai;
-    img {
+    & img {
         width: 176px;
         aspect-ratio: 1/1; /* faz a imagem ficar quadrada */
         object-fit: cover; /* faz a imagem cobrir todo o espaço */
     }
 
-    h3 {
+    & h3 {
         margin-block: 8px 4px;
     }
 }
@@ -106,14 +106,14 @@ section header {
 aside {
     grid-area: aside;
 
-    #more {
+    & #more {
         margin-top: 32px;
 
-        h3 {
+        & h3 {
             margin-top: 8px;
         }
 
-        img {
+        & img {
             width: 72px;
             aspect-ratio: 1/1;
             object-fit: cover;
