@@ -1,105 +1,112 @@
 section header {
-    border-top: 1px solid var(--stroke-color);
-    padding-block: 12px 24px;
-    font: var(--text-span);
+  border-top: 1px solid var(--stroke-color);
+  padding-block: .75rem 1.5rem;
+  font: var(--text-span);
 
-    & a {
-        justify-self: end;
-        align-items: center;
-        gap: 4px;
-        
-        & span {
-            background-image: url(../assets/icons/ArrowRight.svg);
-            width: 16px;
-            height: 16px;
-        }
+  & a {
+    justify-self: end;
+    align-items: center;
+    gap: .25rem;
 
-        &:hover span {
-            background-image: url(../assets/icons/ArrowRightHover.svg);
-        }
+    & span {
+      background-image: url(../assets/icons/ArrowRight.svg);
+      width: 1rem;
+      height: 1rem;
     }
+
+    &:hover span {
+      background-image: url(../assets/icons/ArrowRightHover.svg);
+    }
+  }
 }
 
 #featured {
-    grid-area: featured;
-    
+  display: grid;
+  gap: 1rem;
+  grid-area: featured;
+
+  & > figure {
     & img {
-        height: 100%;
-        object-fit: cover;
-        border-radius: 4px;
+      height: 26rem;
     }
 
-    & .card {
-        position: relative;
-        border-radius: 4px;
-        overflow: hidden;
-
-        /* mesmo que .card::before */
-        &::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            top: 50%;
-            background: linear-gradient(
-                180deg,
-                transparent 0%,
-                #020617 100%
-            );
-        }
-
-        & figcaption {
-            position: absolute;
-            bottom: 0;
-            padding: 24px;
-
-            &:has(.text-lg){
-                padding: 12px;
-            }
-            
-            & h2 {
-                margin-top: 8px;
-            }
-        }
+    & figcaption h2::after {
+      content: "Robôs domésticos começam a ser adotados para tarefas...";
     }
+  }
+
+  & div {
+    display: grid;
+    gap: 1rem;
+  }
+
+  & img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: .25rem;
+  }
+
+  & .card {
+    position: relative;
+    border-radius: .25rem;
+    overflow: hidden;
+
+    /* mesmo que .card::before */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      top: 50%;
+      background: linear-gradient(180deg, transparent 0%, #020617 100%);
+    }
+
+    & figcaption {
+      position: absolute;
+      bottom: 0;
+      padding: 1rem;
+
+      &:has(.text-lg) {
+        padding: 0.75rem;
+      }
+
+      & h2 {
+        margin-top: 0.5rem;
+      }
+    }
+  }
 }
 
 #weekly {
     grid-area: weekly;
 
-    &>div {
-        grid-template-columns: repeat(4, 292px);
-    }
-
-    & img {
-        height: 160px;
-    }
-
     & figure {
-        position: relative;
+      position: relative;
+      margin-bottom: 1rem;
 
-        & .content-tag {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-        }
+      & .content-tag {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+      }
 
-        & p {
-            margin-top: 8px;
-            font-weight: 800;
-        }
+      & p {
+        margin-top: 0.5rem;
+        font-weight: 800;
+      }
     }
-}
+  }
 
 #ai {
-    grid-area: ai;
+  grid-area: ai;
     & img {
-        width: 176px;
-        aspect-ratio: 1/1; /* faz a imagem ficar quadrada */
-        object-fit: cover; /* faz a imagem cobrir todo o espaço */
+      height: 5rem;
+      width: 5rem;
+      aspect-ratio: 1/1; /* faz a imagem ficar quadrada */
+      object-fit: cover; /* faz a imagem cobrir todo o espaço */
     }
 
     & h3 {
-        margin-block: 8px 4px;
+      margin-block: 0.5rem 0.25rem;
     }
 }
 
@@ -107,16 +114,56 @@ aside {
     grid-area: aside;
 
     & #more {
-        margin-top: 32px;
+      margin-top: 2rem;
 
-        & h3 {
-            margin-top: 8px;
-        }
+      & h3 {
+        margin-top: 0.5rem;
+      }
 
-        & img {
-            width: 72px;
-            aspect-ratio: 1/1;
-            object-fit: cover;
-        }
+      & img {
+        width: 4.5rem;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
     }
+  }
+
+@media (width >= 768px) {
+  #featured {
+    grid-template-columns: 1fr 1fr;
+
+    & > figure figcaption h2::after {
+      content: "Robôs domésticos começam a ser adotados para tarefas diárias, prometendo mais conforto e eficiência nas residências.";
+    }
+
+    & > div {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    & figcaption {
+      padding: 1.5rem;
+    }
+  }
+
+  #weekly {
+    & > div {
+      grid-template-columns: repeat(4, 18.25rem);
+    }
+
+    & img {
+      height: 10rem;
+    }
+  }
+
+  #ai {
+    & img {
+      width: 11rem;
+    }
+
+    & div article div:first-child{
+      display: none;
+    }
+  }
+
+  
 }
